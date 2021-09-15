@@ -1,1 +1,18 @@
 
+title Untitled
+
+Selain->Palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note 
+Palvelin->Selain: 302 REDIRECT https://studies.cs.helsinki.fi/exampleapp/notes
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Palvelin->Selain: HTML
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Palvelin->Selain: main.css
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Palvelin->Selain: main.js
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Palvelin->Selain: data.json
+
+*/ HTTP POST -pyyntö sivulle
+Palvelin vastaa pyyntöön HTTP-statuskoodille 302 ja ohjaa uudelle sivulle.
+Selain tekee uudet HTTP GET -pyynnöt ja lataa HTML:n, CSS:n, JS:n ja JSON. 
+Selain saa tarvittavan datan palvelimelta ja toistaa sivun. /*
